@@ -34,6 +34,10 @@ bot.on('message', message => {
     if (message.content.toLocaleLowerCase() == 'm ngu') {
       message.channel.send('m cx ngu');
     }
+
+    if (message.content.toLocaleLowerCase() == 'ngô') {
+      message.channel.send('mình ngô mà cứ bảo người khác ngô');
+    }
   });
 
 bot.on("message", async message => {
@@ -46,10 +50,6 @@ bot.on("message", async message => {
 
     if(cmd === `giới thiệu`){
         return message.channel.send("xin chào, đây là Pông, con gái Nhật Thành")
-    }
-
-    if(cmd === `ngô`){
-        return message.channel.send("mình ngô mà cứ bảo người khác ngô")
     }
 
     if(cmd === `nghiện`){
