@@ -35,6 +35,10 @@ bot.on('message', message => {
       message.channel.send('m cx ngu');
     }
 
+    if (message.content.toLocaleLowerCase() == 'm :corn:') {
+      message.channel.send('m cx :corn:');
+    }
+
     if (message.content.toLocaleLowerCase() == 'ngô') {
       message.channel.send('mình ngô mà cứ bảo người khác ngô');
     }
