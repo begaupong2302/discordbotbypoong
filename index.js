@@ -22,11 +22,7 @@ bot.on('message', message => {
     if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
       message.channel.send('https://cdn.discordapp.com/attachments/851256916110082068/860905923681714236/unknown.png');
     }
-
-    if (message.content.toLocaleLowerCase() == 'iu') {
-      message.channel.send('Chúc mừng sinh nhật bé 3 tủi <3 https://cdn.discordapp.com/attachments/864447635766771743/866725175005675520/b76f62e0284f71b0c1338a509ed54131.jpg');
-    }
-
+    
     if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
       message.channel.send('https://cdn.discordapp.com/attachments/864447635766771743/864863791312535562/unknown.png');
     }
