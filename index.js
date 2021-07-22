@@ -43,6 +43,7 @@ bot.on('message', message => {
 	else{
 		let args = message.content.slice(prefix.length).trim().split(' ');
 		const command = args.shift().toLowerCase();
+		if (command == 'help') message.reply('pick theo cú pháp "A hay B"');
 		if (command == 'game'){
 			message.reply('hỏi gì đi');
 		}
