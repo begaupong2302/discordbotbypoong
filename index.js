@@ -41,7 +41,7 @@ bot.on('message', message => {
     if (message.content == '.game'){
 	message.reply('hỏi gì đi');
 	if(!message.content.startsWith(prefix)|| message.author.bot) {message.channel.send('return'); return;}
-	const string str = message.content.slice(prefix.length).trim().split();
+	const str = message.content.slice(prefix.length).trim().split();
 	message.channel.send(str.split(' hay ')[Math.floor(Math.random()*100%2)]);
 }
   });
