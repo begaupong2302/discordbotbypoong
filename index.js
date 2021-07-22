@@ -1,8 +1,16 @@
+const fs = require('fs');
 const Discord = require('discord.js');
 const slalice = require('./slalice.json');
+const { request } = require('http');
 let prefix = slalice.prefix;
-const bot = new Discord.Client({disableEveryone: true});
+const bot = new Discord.Client({ disableEveryone: true });
+bot.commands = new Discord.Collection();
 
+const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
+for (const file of commandFiles) {
+	const command = require('./commands/${file}');
+	bot.command.set(command.name, command);
+}
 bot.on("ready", async () => {
     console.log(`Iem đã sẵn sàng`)
     bot.user.setActivity("Pông", {type: "PLAYING"});
@@ -43,14 +51,14 @@ bot.on('message', message => {
 	else{
 		let args = message.content.slice(prefix.length).trim().split(' ');
 		const command = args.shift().toLowerCase();
-		if (command == 'help') message.reply('pick theo cú pháp "A hay B"');
-		if (command == 'game'){
-			message.reply('hỏi gì đi');
+		if (!client.commands.has(command)) return;
+
+		try {
+			client.commands.get(command).execute(message, args);
+		} catch (error) {
+			console.error(error);
+			message.reply('there was an error trying to execute that command!');
 		}
-		if (command == 'pick'){
-			message.reply(args.join(' ').split(' hay ')[Math.floor(Math.random()*100%2)]);
-		}
-		if (command == 'exit') {message.channel.send('return');}
 	}	    
 });
 
