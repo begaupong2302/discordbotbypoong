@@ -47,8 +47,7 @@ bot.on('message', message => {
 			message.reply('hỏi gì đi');
 		}
 		if (command == 'pick'){
-			args.join(' ');
-			message.channel.send(args.split(' hay ')[Math.floor(Math.random()*100%2)]);
+			message.channel.send(args.join(' ').split(' hay ')[Math.floor(Math.random()*100%2)]);
 		}
 		if (command == 'exit') {message.channel.send('return');}
 	}	    
