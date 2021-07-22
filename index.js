@@ -19,32 +19,39 @@ bot.on("guildMemberRemove", member => {
 })
 
 bot.on('message', message => {
-    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
-      message.channel.send('https://cdn.discordapp.com/attachments/851256916110082068/860905923681714236/unknown.png');
-    }
-    
-    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
-      message.channel.send('https://cdn.discordapp.com/attachments/864447635766771743/864863791312535562/unknown.png');
-    }
+    if(!message.content.startsWith(prefix)) {
+	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
+	      message.channel.send('https://cdn.discordapp.com/attachments/851256916110082068/860905923681714236/unknown.png');
+	    }
 
-    if (message.content.toLocaleLowerCase() == 'm ngô') {
-      message.channel.send('m cx ngô');
-    }
+	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
+	      message.channel.send('https://cdn.discordapp.com/attachments/864447635766771743/864863791312535562/unknown.png');
+	    }
 
-    if (message.content.toLocaleLowerCase() == 'm ngu') {
-      message.channel.send('m cx ngu');
-    }
+	    if (message.content.toLocaleLowerCase() == 'm ngô') {
+	      message.channel.send('m cx ngô');
+	    }
 
-    if (message.content.toLocaleLowerCase() == 'ngô') {
-      message.channel.send('mình ngô mà cứ bảo người khác ngô');
+	    if (message.content.toLocaleLowerCase() == 'm ngu') {
+	      message.channel.send('m cx ngu');
+	    }
+
+	    if (message.content.toLocaleLowerCase() == 'ngô') {
+	      message.channel.send('mình ngô mà cứ bảo người khác ngô');
+	    }
     }
-    if (message.content == 'n.game'){
-	message.reply('hỏi gì đi');
-	if(!message.content.startsWith(prefix)|| message.author.bot) {message.channel.send('return'); return;}
-	str = message.content.slice(prefix.length).trim();
-	message.channel.send(str.split(' hay ')[Math.floor(Math.random()*100%2)]);
-}
-  });
+	else{
+		const args = message.content.slice(prefix.length).trim().split();
+		const command = args.shift().toLowerCase();
+		if (command == 'game'){
+			message.reply('hỏi gì đi');
+		}
+		if (command == 'pick'){
+			args.join(' ');
+			message.channel.send(args.split(' hay ')[Math.floor(Math.random()*100%2)]);
+		}
+	}	    
+});
 
 bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
