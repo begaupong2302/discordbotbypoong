@@ -40,7 +40,8 @@ bot.on('message', message => {
     }
     if (message.content == 'n.game'){
 	message.channel.send('muốn biết em thích gì? soạn tin theo cú pháp "A hay B", A, B là điều anh muốn em chọn');
-	message.channel.send(message.content.split(' hay ')[Math.floor(Math.random()*100%2)]);
+	string str = message.content;
+	message.channel.send(str.split(' hay ')[Math.floor(Math.random()*100%2)]);
 }
   });
 
