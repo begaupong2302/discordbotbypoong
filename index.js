@@ -50,6 +50,8 @@ bot.on('message', message => {
 			args.join(' ');
 			message.channel.send(args.split(' hay ')[Math.floor(Math.random()*100%2)]);
 		}
+		if (command == 'exit') {message.channel.send('return');}
+		return;
 	}	    
 });
 
