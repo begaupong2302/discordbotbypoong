@@ -41,7 +41,7 @@ bot.on('message', message => {
 	    }
     }
 	else{
-		const args = message.content.slice(prefix.length).trim().split();
+		const args = message.content.slice(prefix.length).trim().split(' ');
 		const command = args.shift().toLowerCase();
 		if (command == 'game'){
 			message.reply('hỏi gì đi');
