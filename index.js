@@ -38,9 +38,10 @@ bot.on('message', message => {
     if (message.content.toLocaleLowerCase() == 'ngô') {
       message.channel.send('mình ngô mà cứ bảo người khác ngô');
     }
-    if (message.content == 'n.game'){
-	message.channel.send('muốn biết em thích gì? soạn tin theo cú pháp "A hay B", A, B là điều anh muốn em chọn');
-	string str = message.content;
+    if (message.content == '.game'){
+	message.reply('hỏi gì đi');
+	if(!message.content.startsWith(prefix)|| message.author.bot) {message.channel.send('return'); return;}
+	const string str = message.content.slice(prefix.length).trim().split();
 	message.channel.send(str.split(' hay ')[Math.floor(Math.random()*100%2)]);
 }
   });
