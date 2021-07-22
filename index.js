@@ -38,7 +38,7 @@ bot.on('message', message => {
     if (message.content.toLocaleLowerCase() == 'ngô') {
       message.channel.send('mình ngô mà cứ bảo người khác ngô');
     }
-    if (message.content == '.game'){
+    if (message.content == 'n.game'){
 	message.reply('hỏi gì đi');
 	if(!message.content.startsWith(prefix)|| message.author.bot) {message.channel.send('return'); return;}
 	const str = message.content.slice(prefix.length).trim().split();
@@ -50,7 +50,7 @@ bot.on("message", async message => {
     if(message.author.bot || message.channel.type === "dm") return;
 
     let prefix = slalice.prefix;
-    let messageArray = message.content.split(" ")
+    let messageArray = message.content.split(" ");
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
