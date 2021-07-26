@@ -31,6 +31,10 @@ bot.on('message', message => {
 	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
 	      message.channel.send('https://cdn.discordapp.com/attachments/851256916110082068/860905923681714236/unknown.png');
 	    }
+	    
+	    if (message.content.toLocaleLowerCase() == 'cak') {
+	      message.channel.send('https://cdn.discordapp.com/attachments/867048031731056661/869131122729160755/unknown.png');
+	    }
 
 	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
 	      message.channel.send('https://cdn.discordapp.com/attachments/864447635766771743/864863791312535562/unknown.png');
