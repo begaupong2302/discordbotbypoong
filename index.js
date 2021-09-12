@@ -16,16 +16,6 @@ bot.on("ready", async () => {
     bot.user.setActivity("Pông", {type: "PLAYING"});
 });
 
-bot.on("guildMemberAdd", member => {
-  const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'welcome')
-  welcomeChannel.send (`Welcome! ${member}`)
-})
-
-bot.on("guildMemberRemove", member => {
-  const welcomeChannel = member.guild.channels.cache.find(channel => channel.name === 'goodbye')
-  welcomeChannel.send (`Goodbye! ${member}`)
-})
-
 bot.on('message', message => {
     if(!message.content.startsWith(prefix)) {
 	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
