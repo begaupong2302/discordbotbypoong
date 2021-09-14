@@ -1,9 +1,12 @@
-const fs = require('fs');
 const Discord = require('discord.js');
 const slalice = require('./slalice.json');
 const { request } = require('http');
+
 let prefix = slalice.prefix;
+
 const bot = new Discord.Client({ disableEveryone: true });
+
+const fs = require('fs');
 bot.commands = new Discord.Collection();
 
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
@@ -20,10 +23,6 @@ bot.on('message', message => {
     if(!message.content.startsWith(prefix)) {
 	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
 	      message.channel.send('https://cdn.discordapp.com/attachments/851256916110082068/860905923681714236/unknown.png');
-	    }
-	    
-	    if (message.content.toLocaleLowerCase() == 'cak') {
-	      message.channel.send('https://cdn.discordapp.com/attachments/867048031731056661/869131122729160755/unknown.png');
 	    }
 
 	    if (message.content.toLocaleLowerCase() == 'cán bộ nghiện') {
@@ -62,13 +61,9 @@ bot.on("message", async message => {
     let cmd = messageArray[0];
     let args = messageArray.slice(1);
 
-    if(cmd === `giới thiệu`){
-        return message.channel.send("xin chào, đây là Pông, con gái Nhật Thành")
-    }
-
     if(cmd === `nghiện`){
         return message.channel.send("https://cdn.discordapp.com/attachments/851256916110082068/860905923681714236/unknown.png")
     }
 })
 
-bot.login(process.env.token);
+bot.login(slalice.token);
