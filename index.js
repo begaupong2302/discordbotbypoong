@@ -66,4 +66,4 @@ bot.on("message", async message => {
     }
 })
 
-bot.login(slalice.token);
+bot.login(process.env.token);
